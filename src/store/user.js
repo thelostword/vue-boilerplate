@@ -1,51 +1,68 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 11:11:36
- * @LastEditTime: 2022-05-18 12:03:22
+ * @LastEditTime: 2022-06-10 11:00:20
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\src\store\user.js
  */
 import { defineStore, acceptHMRUpdate } from 'pinia';
-
-/**
- * Simulate a login
- * @param {string} a
- * @param {string} p222222
- */
-function apiLogin(a, p) {
-  if (a === 'ed' && p === 'ed') return Promise.resolve({ isAdmin: true });
-  if (p === 'ed') return Promise.resolve({ isAdmin: false });
-  return Promise.reject(new Error('invalid credentials'));
-}
+import $to from '@/utils/await-to';
+import { setToken, removeToken } from '@/utils/auth';
+import {
+  login as apiLogin,
+  userInfo as apiUserInfo,
+} from '@/api/auth';
 
 export const useUserStore = defineStore({
   id: 'user',
   state: () => ({
-    name: 'Eduardo',
-    isAdmin: true,
+    userInfo: {},
   }),
 
   actions: {
-    logout() {
-      this.$patch({
-        name: '',
-        isAdmin: false,
-      });
+    /**
+     * 登录
+     * @param {object} data 登录信息
+     * @returns Promise 登录结果
+     */
+    async login(data) {
+      const [err, res] = await $to(apiLogin(data));
+      if (err) {
+        const reject = await Promise.reject(err);
+        return reject;
+      }
+      // 存储token
+      setToken(res.token);
+      const resolve = await Promise.resolve(res);
+      return resolve;
     },
 
     /**
-     * Attempt to login a user
-     * @param {string} user
-     * @param {string} password
+     * 退出登录
      */
-    async login(user, password) {
-      const userData = await apiLogin(user, password);
+    logout() {
+      // 删除token
+      removeToken();
+      // 重置store
+      this.$reset();
+    },
 
+    /**
+     * 获取用户信息
+     * @returns Promise 获取用户信息
+     */
+    async getUserInfo() {
+      const [err, res] = await $to(apiUserInfo());
+      if (err) {
+        const reject = await Promise.reject(err);
+        return reject;
+      }
       this.$patch({
-        name: user,
-        ...userData,
+        userInfo: res.data || {},
       });
+      const resolve = await Promise.resolve(res);
+      return resolve;
     },
   },
 });
