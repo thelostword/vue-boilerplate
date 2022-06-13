@@ -1,7 +1,7 @@
 <!--
  * @Author: losting
  * @Date: 2022-05-18 10:09:31
- * @LastEditTime: 2022-06-10 11:12:10
+ * @LastEditTime: 2022-06-13 09:53:50
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\src\views\dashboard\index.vue
@@ -25,7 +25,7 @@
         placeholder="请输入验证码"
       ><br>
 
-      <button @click="handleSubmit">
+      <button @click.prevent="handleSubmit">
         提交
       </button>
     </form>
@@ -54,9 +54,10 @@ const handleSubmit = () => {
     username: state.username,
     password: state.password,
     code: state.code,
-  }).then(() => {
-    console.log('login success');
   })
+    .then(() => {
+      console.log('login success');
+    })
     .finally(() => {
       state.isLoading = false;
     });

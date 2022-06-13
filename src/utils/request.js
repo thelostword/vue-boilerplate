@@ -1,7 +1,7 @@
 /*
  * @Author: losting
  * @Date: 2022-05-25 17:18:21
- * @LastEditTime: 2022-06-10 11:12:48
+ * @LastEditTime: 2022-06-13 11:10:17
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\src\utils\request.js
@@ -9,6 +9,7 @@
 import axios from 'axios';
 // import qs from 'qs';
 import { getToken, removeToken } from '@/utils/auth';
+import $to from '@/utils/await-to';
 
 // 是否显示重新登录
 export const isRelogin = { show: false };
@@ -68,4 +69,4 @@ service.interceptors.response.use(
   },
 );
 
-export default service;
+export default (arg) => $to(service(arg));

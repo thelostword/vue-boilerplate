@@ -1,13 +1,12 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 11:11:36
- * @LastEditTime: 2022-06-10 11:00:20
+ * @LastEditTime: 2022-06-13 11:10:51
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\src\store\user.js
  */
 import { defineStore, acceptHMRUpdate } from 'pinia';
-import $to from '@/utils/await-to';
 import { setToken, removeToken } from '@/utils/auth';
 import {
   login as apiLogin,
@@ -27,15 +26,11 @@ export const useUserStore = defineStore({
      * @returns Promise 登录结果
      */
     async login(data) {
-      const [err, res] = await $to(apiLogin(data));
-      if (err) {
-        const reject = await Promise.reject(err);
-        return reject;
-      }
+      const [err, res] = await apiLogin(data);
+      if (err) return await Promise.reject(err);
       // 存储token
       setToken(res.token);
-      const resolve = await Promise.resolve(res);
-      return resolve;
+      return await Promise.resolve(res);
     },
 
     /**
@@ -53,16 +48,12 @@ export const useUserStore = defineStore({
      * @returns Promise 获取用户信息
      */
     async getUserInfo() {
-      const [err, res] = await $to(apiUserInfo());
-      if (err) {
-        const reject = await Promise.reject(err);
-        return reject;
-      }
+      const [err, res] = await apiUserInfo();
+      if (err) return await Promise.reject(err);
       this.$patch({
         userInfo: res.data || {},
       });
-      const resolve = await Promise.resolve(res);
-      return resolve;
+      return await Promise.resolve(res);
     },
   },
 });
