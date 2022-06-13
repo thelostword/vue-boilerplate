@@ -1,7 +1,7 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 09:31:13
- * @LastEditTime: 2022-06-13 10:51:19
+ * @LastEditTime: 2022-06-13 11:24:54
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\.eslintrc.js
@@ -40,5 +40,6 @@ module.exports = {
     'no-console': 0,
     'no-param-reassign': ['error', { props: false }],
     'no-return-await': 0,
+    'no-void': 0,
   },
 };
