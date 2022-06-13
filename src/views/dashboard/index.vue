@@ -1,7 +1,7 @@
 <!--
  * @Author: losting
  * @Date: 2022-05-18 10:09:31
- * @LastEditTime: 2022-06-13 09:53:50
+ * @LastEditTime: 2022-06-13 11:52:36
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\src\views\dashboard\index.vue
@@ -41,7 +41,7 @@ const userStore = useUserStore();
 const state = reactive({
   username: '',
   password: '',
-  code: '',
+  code: '12',
 
   codeImg: '',
   isLoading: false,
