@@ -1,7 +1,7 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 11:11:36
- * @LastEditTime: 2022-06-13 11:10:51
+ * @LastEditTime: 2022-06-22 15:26:44
  * @LastEditors: losting
  * @Description:
  * @FilePath: \vite-vue3-template\src\store\user.js
@@ -12,6 +12,7 @@ import {
   login as apiLogin,
   userInfo as apiUserInfo,
 } from '@/api/auth';
+import $to from '@/utils/await-to';
 
 export const useUserStore = defineStore({
   id: 'user',
@@ -26,7 +27,7 @@ export const useUserStore = defineStore({
      * @returns Promise 登录结果
      */
     async login(data) {
-      const [err, res] = await apiLogin(data);
+      const [err, res] = await $to(apiLogin(data));
       if (err) return await Promise.reject(err);
       // 存储token
       setToken(res.token);
@@ -48,7 +49,7 @@ export const useUserStore = defineStore({
      * @returns Promise 获取用户信息
      */
     async getUserInfo() {
-      const [err, res] = await apiUserInfo();
+      const [err, res] = await $to(apiUserInfo());
       if (err) return await Promise.reject(err);
       this.$patch({
         userInfo: res.data || {},
