@@ -1,8 +1,8 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 09:31:13
- * @LastEditTime: 2022-06-22 15:11:17
- * @LastEditors: losting
+ * @LastEditTime: 2022-08-24 16:08:13
+ * @LastEditors: thelostword
  * @Description:
  * @FilePath: \vite-vue3-template\.eslintrc.js
  */
@@ -42,5 +42,7 @@ module.exports = {
     'no-return-await': 0,
     'no-void': 0,
     'import/export': 0,
+    'no-underscore-dangle': 0,
+    'no-new': 0,
   },
 };
