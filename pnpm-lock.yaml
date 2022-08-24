@@ -7,6 +7,7 @@ specifiers:
   '@release-it/conventional-changelog': ^5.1.0
   '@vitejs/plugin-vue': ^3.0.3
   '@vitejs/plugin-vue-jsx': ^2.0.0
+  ahooks-vue: ^0.13.3
   axios: ^0.27.2
   eslint: ^8.22.0
   eslint-config-airbnb-base: ^15.0.0
@@ -30,6 +31,7 @@ specifiers:
 
 dependencies:
   '@losting/ls': 1.0.0_jsencrypt@3.2.1
+  ahooks-vue: 0.13.3_axios@0.27.2+vue@3.2.37
   axios: 0.27.2
   jsencrypt: 3.2.1
   normalize.css: 8.0.1
@@ -1155,6 +1157,20 @@ packages:
       clean-stack: 2.2.0
       indent-string: 4.0.0
     dev: true
+
+  /ahooks-vue/0.13.3_axios@0.27.2+vue@3.2.37:
+    resolution: {integrity: sha512-ncUjwyx6bLeexCHHmt9bE6MRvKFSwS2usJDSsXuQXXiZLvtYKPV1NHkEtoIwj0oqWdhXHBQLnwc0v+j3NZS8hg==}
+    peerDependencies:
+      axios: '*'
+    dependencies:
+      axios: 0.27.2
+      lodash: 4.17.21
+      qs: 6.11.0
+      vue-demi: 0.13.10_vue@3.2.37
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /ajv/6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -4037,7 +4053,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/5.1.0:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
