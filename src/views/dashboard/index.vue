@@ -1,13 +1,13 @@
 <!--
  * @Author: losting
  * @Date: 2022-05-18 10:09:31
- * @LastEditTime: 2022-06-13 11:52:36
- * @LastEditors: losting
+ * @LastEditTime: 2022-09-16 14:26:22
+ * @LastEditors: thelostword
  * @Description:
  * @FilePath: \vite-vue3-template\src\views\dashboard\index.vue
 -->
 <template>
-  <div class="dashboard">
+  <div class="dashboard bg-slate-500">
     <form>
       <input
         v-model="state.username"

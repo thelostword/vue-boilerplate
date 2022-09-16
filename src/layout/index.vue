@@ -1,8 +1,8 @@
 <!--
  * @Author: losting
  * @Date: 2022-05-18 10:08:14
- * @LastEditTime: 2022-05-18 11:35:06
- * @LastEditors: losting
+ * @LastEditTime: 2022-09-16 14:28:59
+ * @LastEditors: thelostword
  * @Description:
  * @FilePath: \vite-vue3-template\src\layout\index.vue
 -->
@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :class="COMPONENT">
+  <div :class="`${COMPONENT} bg-orange-500`">
     {{ globalStore.isLoading }}
     <router-view />
   </div>

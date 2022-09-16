@@ -1,8 +1,8 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 16:39:38
- * @LastEditTime: 2022-06-07 15:32:59
- * @LastEditors: losting
+ * @LastEditTime: 2022-09-16 14:27:11
+ * @LastEditors: thelostword
  * @Description:
  * @FilePath: \vite-vue3-template\vite.config.js
  */
@@ -76,6 +76,15 @@ export default ({ mode }) => {
           },
           chunkFileNames: 'js/[name]-[hash].js',
           entryFileNames: 'js/[name]-[hash].js',
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              const modules = id.toString().split('node_modules/')[2].split('/');
+              const chunksModules = [];
+              if (chunksModules.includes(modules[0])) return modules[0];
+              return 'vendor';
+            }
+            return undefined;
+          },
         },
       },
     },
