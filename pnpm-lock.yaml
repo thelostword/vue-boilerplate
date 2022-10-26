@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 17.1.0
   '@losting/ls': 1.0.0
   '@release-it/conventional-changelog': 5.1.0
-  '@vitejs/plugin-vue': 3.1.0
+  '@vitejs/plugin-vue': 3.2.0
   '@vitejs/plugin-vue-jsx': 2.0.1
   ahooks-vue: 0.14.1
   autoprefixer: 10.4.12
@@ -47,7 +47,7 @@ devDependencies:
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@release-it/conventional-changelog': 5.1.0_release-it@15.4.2
-  '@vitejs/plugin-vue': 3.1.0_vite@3.1.3+vue@3.2.39
+  '@vitejs/plugin-vue': 3.2.0_vite@3.1.3+vue@3.2.39
   '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.1.3+vue@3.2.39
   autoprefixer: 10.4.12_postcss@8.4.16
   eslint: 8.24.0
@@ -961,8 +961,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/3.1.0_vite@3.1.3+vue@3.2.39:
-    resolution: {integrity: sha512-fmxtHPjSOEIRg6vHYDaem+97iwCUg/uSIaTzp98lhELt2ISOQuDo2hbkBdXod0g15IhfPMQmAxh4heUks2zvDA==}
+  /@vitejs/plugin-vue/3.2.0_vite@3.1.3+vue@3.2.39:
+    resolution: {integrity: sha512-E0tnaL4fr+qkdCNxJ+Xd0yM31UwMkQje76fsDVBBUCoGOUPexu2VDUYHL8P4CwV+zMvWw6nlRw19OnRKmYAJpw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
