@@ -14,7 +14,7 @@ specifiers:
   eslint-config-airbnb-base: 15.0.0
   eslint-import-resolver-alias: 1.1.2
   eslint-plugin-import: 2.26.0
-  eslint-plugin-vue: 9.5.1
+  eslint-plugin-vue: 9.7.0
   husky: 8.0.1
   jsencrypt: 3.2.1
   lint-staged: 13.0.3
@@ -54,7 +54,7 @@ devDependencies:
   eslint-config-airbnb-base: 15.0.0_dg2pe6kqkrddxbf2funb723kue
   eslint-import-resolver-alias: 1.1.2_fkfqfehjtk7sk2efaqbgxsuasa
   eslint-plugin-import: 2.26.0_eslint@8.24.0
-  eslint-plugin-vue: 9.5.1_eslint@8.24.0
+  eslint-plugin-vue: 9.7.0_eslint@8.24.0
   husky: 8.0.1
   lint-staged: 13.0.3
   postcss: 8.4.16
@@ -2730,8 +2730,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-vue/9.5.1_eslint@8.24.0:
-    resolution: {integrity: sha512-Y0sL2RY7Xc9S8kNih9lbwHIDmewUg9bfas6WSzsOWRgDXhIHKxRBZYNAnVcXBFfE+bMWHUA5GLChl7TcTYUI8w==}
+  /eslint-plugin-vue/9.7.0_eslint@8.24.0:
+    resolution: {integrity: sha512-DrOO3WZCZEwcLsnd3ohFwqCoipGRSTKTBTnLwdhqAbYZtzWl0o7D+D8ZhlmiZvABKTEl8AFsqH1GHGdybyoQmw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
