@@ -1,7 +1,7 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 09:31:13
- * @LastEditTime: 2022-08-24 16:08:13
+ * @LastEditTime: 2022-11-10 15:09:45
  * @LastEditors: thelostword
  * @Description:
  * @FilePath: \vite-vue3-template\.eslintrc.js
@@ -30,7 +30,7 @@ module.exports = {
   ],
   settings: {
     'import/resolver': {
-      alias: [['@', './src'], ['svg', './src/assets/svg']],
+      alias: [['@', './src'], ['icons', './src/assets/icons']],
     },
   },
   rules: {

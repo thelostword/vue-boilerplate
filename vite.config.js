@@ -1,16 +1,17 @@
 /*
  * @Author: losting
  * @Date: 2022-05-18 16:39:38
- * @LastEditTime: 2022-09-16 14:27:11
+ * @LastEditTime: 2022-11-10 15:09:04
  * @LastEditors: thelostword
  * @Description:
  * @FilePath: \vite-vue3-template\vite.config.js
  */
+import { fileURLToPath, URL } from 'node:url';
+
 /* eslint-disable */
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import { resolve } from 'path';
 import svgLoader from 'vite-svg-loader';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend-plus';
 import Markdown from 'vite-plugin-md';
@@ -32,8 +33,8 @@ export default ({ mode }) => {
 
     resolve: {
       alias: {
-        '@': resolve(__dirname, './src'),
-        'svg/': `${resolve(__dirname, 'src/assets/svg')}/`,
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        icons: fileURLToPath(new URL('./src/assets/icons', import.meta.url)),
       },
     },
 
@@ -56,21 +57,13 @@ export default ({ mode }) => {
       assetsInlineLimit: 1024 * 4,
       sourcemap: false,
       rollupOptions: {
-        input: {
-          main: resolve(__dirname, 'index.html'),
-        },
+        input: fileURLToPath(new URL('./index.html', import.meta.url)),
         output: {
           assetFileNames: (assetInfo) => {
             const info = assetInfo.name.split('.');
             let extType = info[info.length - 1];
-            if (
-              /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/i.test(assetInfo.name)
-            ) {
-              extType = 'media';
-            } else if (/\.(png|jpe?g|gif|svg)(\?.*)?$/.test(assetInfo.name)) {
+            if (/\.(png|jpe?g|gif|svg)(\?.*)?$/.test(assetInfo.name)) {
               extType = 'imgs';
-            } else if (/\.(woff2?|eot|ttf|otf)(\?.*)?$/i.test(assetInfo.name)) {
-              extType = 'fonts';
             }
             return `${extType}/[name]-[hash][extname]`;
           },
