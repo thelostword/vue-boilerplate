@@ -44,7 +44,7 @@
     "vite": "^3.2.3",
     "vite-plugin-md": "^0.20.4",
     "vite-plugin-vue-setup-extend-plus": "^0.1.0",
-    "vite-svg-loader": "^3.6.0"
+    "vite-svg-loader": "^4.0.0"
   },
   "lint-staged": {
     "src/**/*.{vue,js,jsx}": "eslint --fix"
