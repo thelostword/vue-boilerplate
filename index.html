@@ -1,0 +1,84 @@
+<!--
+ * @Author: losting
+ * @Date: 2022-05-18 09:22:59
+ * @LastEditTime: 2022-08-24 15:59:21
+ * @LastEditors: losting
+ * @Description: 
+ * @FilePath: \vue-boilerplate\index.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue-boilerplate</title>
+    <style type="text/css">
+      body{ margin: 0; padding: 0; }
+      #app { width: 100vw; height: 100vh; }
+      .__loading {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background:  #79bbff;
+        line-height: 1.6;
+      }
+      .__loading > div {
+        display: inline-block;
+        color: #ffffff;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 32px;
+        letter-spacing: .083333em;
+      }
+      .__loading > div::before {
+        content: "";
+        position: absolute;
+        right: 1.458333em;
+        bottom: .46em;
+        height: .5em;
+        width: .093em;
+        background: currentColor;
+      }
+      .__loading > div::after {
+        content: "";
+        width: .16666em;
+        height: .16666em;
+        position: absolute;
+        right: 1.43em;
+        top: .041666em;
+        border-radius: 50%;
+        background: red;
+        animation: __loading-animation 1s ease-in infinite;
+      }
+      @keyframes __loading-animation {
+        0% {
+          transform: translateY(.36666em) scaleY(1) scaleX(1.25);
+        }
+        25%,
+        75% {
+          transform: translateY(.104166em) scaleY(1.2) scaleX(1);
+        }
+        50% {
+          transform: translateY(-.008333em) scaleY(1) scaleX(1);
+        }
+        100% {
+          transform: translateY(.36666em) scaleY(.8) scaleX(.8);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="__loading">
+        <div>Load&nbsp;ng</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
