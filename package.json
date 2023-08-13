@@ -34,7 +34,7 @@
     "commitizen": "^4.3.0",
     "husky": "^8.0.3",
     "inquirer": "^8.2.5",
-    "lint-staged": "^13.2.2",
+    "lint-staged": "^14.0.0",
     "release-it": "^15.11.0",
     "sass": "^1.63.5",
     "unocss": "^0.53.1",
