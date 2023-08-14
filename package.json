@@ -33,7 +33,7 @@
     "@vue/eslint-config-airbnb": "^7.0.0",
     "commitizen": "^4.3.0",
     "husky": "^8.0.3",
-    "inquirer": "^8.2.5",
+    "inquirer": "^9.0.0",
     "lint-staged": "^14.0.0",
     "release-it": "^16.0.0",
     "sass": "^1.63.5",
