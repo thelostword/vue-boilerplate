@@ -40,7 +40,7 @@
     "unocss": "^0.55.0",
     "vite": "^4.3.9",
     "vite-plugin-vue-markdown": "^0.23.5",
-    "vite-svg-loader": "^4.0.0"
+    "vite-svg-loader": "^5.0.0"
   },
   "lint-staged": {
     "src/**/*.{vue,js,cjs,mjs,jsx}": "eslint --fix"
